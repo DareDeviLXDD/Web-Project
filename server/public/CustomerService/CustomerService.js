@@ -4,20 +4,30 @@ var messageCont = document.getElementById('msgBox');
 let footer = document.getElementById('utils');
 let container = document.getElementById('container');
 let Send = document.getElementById('send');
+let nav = document.getElementById('nav');
+let grabber = document.getElementById('grabber');
+let history = document.getElementById('historyContainer');
 const indentaion =100;
-
+nav.style.top=header.offsetHeight+'px' ;
+nav.style.height=(window.innerHeight-(header.offsetHeight+footer.offsetHeight))+'px';
+grabber.style.height=(window.innerHeight-(header.offsetHeight+footer.offsetHeight))+'px';
+history.style.top=document.getElementById('navHead').offsetHeight+'px';
+history.style.height=(nav.offsetHeight-document.getElementById('navHead').offsetHeight)+'px';
 function SendMsg()
 {
     let message = document.createElement("div");
     message.className="userMsg";
-    let content =''; 
+    let content ='';
     content=messageCont.value;
+    if(content!="")
+    {
     messageCont.value="";
     let msgContent =document.createElement("label");
     //fix new line becomes space
     msgContent.innerHTML=content;
     message.appendChild(msgContent);
     container.appendChild(message);
+    }
 
     //fix need to stack from downwards
 
@@ -40,6 +50,8 @@ window.addEventListener('resize',()=>
 Back.style.height = window.getComputedStyle(header).height;
 messageCont.style.width=(window.innerWidth-indentaion)+'px';
 container.style.height=window.innerHeight-(header.offsetHeight+footer.offsetHeight);
+nav.style.height=(window.innerHeight-(header.offsetHeight+footer.offsetHeight))+'px';
+history.style.height=(nav.offsetHeight-document.getElementById('navHead').offsetHeight)+'px';
 });
 Send.addEventListener('click',()=>{
     SendMsg();
@@ -68,4 +80,10 @@ messageCont.addEventListener("keydown", function(event) {
         
         SendMsg();
       }
+  });
+  nav.addEventListener('mouseenter',()=>{
+    container.style.paddingLeft='190';
+  });
+  nav.addEventListener('mouseleave',()=>{
+    container.style.paddingLeft='0';
   });
