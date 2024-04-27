@@ -11,10 +11,10 @@ header {
     right: 0;
     background-color: #1c1c1c;
     z-index: 1000; /* Ensure the header is above other elements */
-  }
+}
   body {
     padding-top: 190px; /* Adjust this to match the header height */
-  }
+}
 .strap {
     background-color: #e57aaf; /* Pink color */
     color: white;
@@ -35,6 +35,7 @@ header {
     }
 }
 .logo {
+    font-family: 'Lucida Grande';
     background-color:   #1c1c1c;
     color: whitesmoke;
     padding: 15px;
@@ -96,7 +97,6 @@ header {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 .content {
     display: flex; /* Horizontal alignment with Flexbox */
     justify-content: flex-start; /* Align to the left */
@@ -105,7 +105,10 @@ header {
     padding: 20px;
 }
 .additional-info {
+    position: fixed; /* Keep this section fixed */
     display: flex; /* Use Flexbox within this container */
+    right: 20px; /* Position relative to viewport */
+    z-index: 900; /* Ensure it's above other content */
     flex-direction: column; /* Stack elements vertically */
     justify-content: flex-start; /* Align at the top */
 }
@@ -113,6 +116,7 @@ header {
     display: inline-block; /* Keep size based on content */
     padding: 10px; /* Add padding */
     font-size: 1.9em; /* Adjust font size */
+    margin-top: -10px;
     text-align: left; /* Change text alignment to the left */
     width: 80%; /* Control width to influence text wrapping */
     font-weight: 600; 
@@ -124,6 +128,7 @@ header {
     border: 1px solid black; /* Border around the entire element */
     color: white; /* Text color */
     padding: 10px; /* Padding inside the border */
+    margin-top: 5px;
     font-size: 1.4em; /* Font size */
     font-weight: bold; /* Text weight */
     text-align: center; /* Center text */
@@ -132,12 +137,88 @@ header {
     border: none; /* Remove default borders */
     border-top: 1px solid lightgrey; /* Define the line's style */
     width: 100%; /* Make the line stretch across */
-    margin-top: 10px; /* Space between the box and the line */
-    margin-bottom: 0; /* Optional: Control space below the line */
+    margin-top: 20px; /* Space between the box and the line */
+    margin-bottom: 10px; /* Optional: Control space below the line */
 }
-
-
-
+.size-selector {
+    display: flex; /* Use flexbox for layout */
+    gap: 10px; /* Space between size options */
+    align-items: center; /* Align text vertically */
+    margin-top: 10px;
+}
+.size-selector label {
+    display: inline-flex; /* Makes label act like a button */
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 2px solid lightgrey; /* Default border color */
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s; /* Smooth transition for hover effect */
+}
+.size-selector label:hover {
+    border-color: black; /* Change border color on hover */
+}
+.size-selector input {
+    display: none; /* Hide the radio buttons */
+}
+.size-selector input:checked + label {
+    border-color: black; /* Keep border black when selected */
+    background-color: white; /* Retain white background for visibility */
+    color: black; /* Ensure text stays readable */
+}
+.product-gallery {
+    display: flex; /* Horizontal alignment */
+    gap: 20px; /* Space between elements */
+    padding: 20px; /* Padding around the gallery */
+}
+.thumbnails {
+    display: flex;
+    flex-direction: column; /* Vertical stacking */
+    gap: 10px; /* Space between thumbnails */
+    align-items: center;
+}
+.thumbnail {
+    width: 80px; /* Fixed size for thumbnails */
+    height: 100px;
+    cursor: pointer; /* Pointer cursor on hover */
+    border: 2px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+.thumbnail:hover {
+    border-color: #000; /* Change border color on hover */
+}
+.product-details {
+    margin: 20px;
+}
+.quantity-selector {
+    margin-top: 15px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+input[type="number"] {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(233, 204, 39);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: black;
+    color:white;
+}
 .footer {
     display: flex;
     justify-content: space-between;

@@ -37,6 +37,7 @@ header {
     }
 }
 .logo {
+    font-family: 'Lucida Grande';
     background-color:   #1c1c1c;
     color: whitesmoke;
     padding: 15px;
@@ -68,7 +69,7 @@ header {
 }
 
 .navigation a:hover {
-    color: rgb(198, 198, 13);
+    color: rgb(233, 185, 39);
 }
 .dropdown {
     position: relative;
