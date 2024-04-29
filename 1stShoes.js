@@ -6,36 +6,26 @@ function changeImage(newSrc) {
         console.error("Main image not found");
     }
 }
-function updateSize(size) {
-    var selectedSize = document.getElementById("selected-size"); // Correct ID
-    if (selectedSize) { // Ensure the element is found
-        selectedSize.textContent = size; // Update the content with the selected size
-    } else {
-        console.error("Selected size element not found"); // Error handling if the ID is incorrect
-    }
-}
-function decrementQuantity() {
-    const quantityInput = document.getElementById("quantity");
-    let currentValue = parseInt(quantityInput.value);
+function initializeQuantity() {
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
 
-    if (currentValue > 1) { // Ensure quantity is at least 1
-        currentValue--;
-        quantityInput.value = currentValue;
-        updateQuantityInUrl(currentValue); // Update URL with new quantity
-    }
-}
-function incrementQuantity() {
-    const quantityInput = document.getElementById("quantity");
-    let currentValue = parseInt(quantityInput.value);
+    let a = 1;
 
-    currentValue++;
-    quantityInput.value = currentValue;
-    updateQuantityInUrl(currentValue); // Update URL with new quantity
-}
-function updateQuantityInUrl(quantity) {
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.set("quantity", quantity); // Update query parameter
-    window.history.replaceState({}, '', currentUrl.toString());
+    plus.addEventListener("click", () => {
+        a++;
+        a = a < 10 ? "0" + a : a; // Format for numbers less than 10
+        num.innerText = a; // Update the displayed quantity
+    });
+
+    minus.addEventListener("click", () => {
+        if (a > 1) {
+            a--;
+            a = a < 10 ? "0" + a : a; // Format for numbers less than 10
+            num.innerText = a; // Update the displayed quantity
+        }
+    });
 }
 function addToCart() {
     const quantity = document.getElementById("quantity").value;

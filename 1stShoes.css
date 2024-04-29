@@ -14,6 +14,7 @@ header {
 }
   body {
     padding-top: 190px; /* Adjust this to match the header height */
+
 }
 .strap {
     background-color: #e57aaf; /* Pink color */
@@ -98,6 +99,7 @@ header {
     display: block;
 }
 .content {
+    position: relative;
     display: flex; /* Horizontal alignment with Flexbox */
     justify-content: flex-start; /* Align to the left */
     align-items: flex-start; /* Align to the top */
@@ -105,7 +107,7 @@ header {
     padding: 20px;
 }
 .additional-info {
-    position: fixed; /* Keep this section fixed */
+    position: absolute; /* Keep this section fixed */
     display: flex; /* Use Flexbox within this container */
     right: 20px; /* Position relative to viewport */
     z-index: 900; /* Ensure it's above other content */
@@ -115,7 +117,7 @@ header {
 .card-body {
     display: inline-block; /* Keep size based on content */
     padding: 10px; /* Add padding */
-    font-size: 1.9em; /* Adjust font size */
+    font-size: 1.5em; /* Adjust font size */
     margin-top: -10px;
     text-align: left; /* Change text alignment to the left */
     width: 80%; /* Control width to influence text wrapping */
@@ -129,7 +131,7 @@ header {
     color: white; /* Text color */
     padding: 10px; /* Padding inside the border */
     margin-top: 5px;
-    font-size: 1.4em; /* Font size */
+    font-size: 1.5em; /* Font size */
     font-weight: bold; /* Text weight */
     text-align: center; /* Center text */
 }
@@ -152,7 +154,7 @@ header {
     justify-content: center;
     padding: 10px 20px;
     border: 2px solid lightgrey; /* Default border color */
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: white;
     cursor: pointer; /* Pointer cursor on hover */
     transition: all 0.3s; /* Smooth transition for hover effect */
@@ -168,6 +170,10 @@ header {
     background-color: white; /* Retain white background for visibility */
     color: black; /* Ensure text stays readable */
 }
+.main-image img {
+    width: 500px; /* Example width for the main image */
+    height: auto; /* Maintain aspect ratio */
+}
 .product-gallery {
     display: flex; /* Horizontal alignment */
     gap: 20px; /* Space between elements */
@@ -180,8 +186,8 @@ header {
     align-items: center;
 }
 .thumbnail {
-    width: 80px; /* Fixed size for thumbnails */
-    height: 100px;
+    width: 80px; /* Set width of thumbnails */
+    height: 100px; /* Set height of thumbnails */
     cursor: pointer; /* Pointer cursor on hover */
     border: 2px solid #ccc;
     border-radius: 5px; /* Rounded corners */
@@ -193,19 +199,30 @@ header {
 .product-details {
     margin: 20px;
 }
-.quantity-selector {
-    margin-top: 15px;
-    margin-right: 20px;
+
+.wrapper {
+    width: 150px;
+    height: 40px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    margin: -10px 0px 10px 0px;
+    padding: 5px;
+    background: #FFF;
+    border-radius: 20px;
+    border: 2px solid lightgrey; /* Default border color */
 }
-input[type="number"] {
-    width: 50px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.wrapper span {
+    padding: 0 10px; /* Optional: Add padding to ensure spacing between items */
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
 }
+.wrapper span.num {
+    font-size: 20px;
+    pointer-events: none;
+}
+
 button {
     margin-top: 10px;
     padding: 10px;
@@ -215,7 +232,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-button:hover {
+button:hover { 
     background-color: black;
     color:white;
 }
