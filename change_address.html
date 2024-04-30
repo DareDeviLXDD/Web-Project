@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Address</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            margin-top: 0;
+        }
+        .section-content {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Change Address</h2>
+        
+        <div class="section">
+            <h3>New Address Details</h3>
+            <div class="section-content">
+                <form id="addressForm" action="save_address.php" method="post">
+                    <div class="form-group">
+                        <label for="street">Street Address:</label>
+                        <input type="text" id="street" name="street" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP Code:</label>
+                        <input type="text" id="zip" name="zip" required>
+                    </div>
+                    <button type="submit">Save Address</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="message" style="display: none; color: green;">Address changed successfully!</div>
+
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('message')) {
+                const message = params.get('message');
+                document.getElementById("message").style.display = "block";
+                document.getElementById("message").textContent = message;
+            }
+        </script>
+    </div>
+</body>
+</html>
