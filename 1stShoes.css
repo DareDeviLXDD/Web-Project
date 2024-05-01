@@ -46,6 +46,83 @@ header {
     text-transform: uppercase;
     text-align: center;
 }
+
+
+/* Style for icons */
+.logo a {
+    position: absolute; 
+    text-align: center;
+    font-size: 23px; /* icon size */
+ }
+.logo a:nth-child(1) {
+   right: 170px; 
+   font-size: 23px;
+   color: #ffffff;
+}
+.logo a:nth-child(2) {
+   right: 130px; 
+   color: #ffffff;
+   font-size: 20px;
+}
+.logo a:nth-child(3) {
+   right: 90px;
+   color: #ffffff;
+   font-size: 20px;
+}
+.logo a:nth-child(4) {
+   right: 50px; 
+   color: #ffffff;
+   font-size: 20px;
+}
+.search-bar {
+    position: absolute;
+    border-radius: 50px;
+    top: calc(40% + 10px); /* Adjust the distance from the search icon */
+    left: 1100px;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    z-index: 2;
+ }
+ .search-bar input {
+    width: 200px;
+    height: 15px;
+    border-radius: 50px;
+    padding: 10px;
+ }
+ .search-bar button {
+    padding: 5px 10px;
+    border-radius: 50px;
+ }
+ .cart-panel {
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    border-radius: 40px;
+    top: calc(40% + 10px); /* Adjust the distance from the search icon */
+    left: 1000px;
+    background-color: #fff;
+    padding: 10px;
+    display: none;
+    z-index: 2;
+ }
+ .cart-panel img {
+    padding-top: 50px;
+    padding-left: 100px;
+    width: 300px;
+    height: 200px;
+    border-radius: 40px;
+    display:block;
+ }
+ .cart-panel button {
+   
+    display: inline;
+    margin-top: 40px;
+    border-radius: 40px;
+ } 
+
+
 .navigation {
     background-color: #1c1c1c;
     color: white;
