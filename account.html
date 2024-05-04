@@ -4,85 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Settings</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h3 {
-            margin-top: 0;
-        }
-        .section-content {
-            padding: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .section-with-margin {
-            margin-bottom: 20px; 
-        }
-        label {
-            display: block;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="password"],
-        select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #ff69b4;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #ff1493;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            margin-bottom: 10px; 
-        }
-        th, td {
-            padding: 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            text-align: left;
-        }
-        th {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
-    </style>
-
+    <link rel="stylesheet" href="acc.css"> <!-- Link to external CSS file -->
 </head>
+
 <body>
     <div class="container">
-        <h2>Account Settings</h2>
+        <h2>A`  ccount Settings</h2>
         
         <!-- Customer Information Section -->
         <div class="section section-with-margin">
@@ -136,13 +63,14 @@
         <div class="section section-with-margin">
             <h3>Change Username</h3>
             <div class="section-content">
-                <form action="change_username.php" method="post">
+                <form action="change_username.php" method="post" onsubmit="return showSuccessMessage('username', 'Username has changed successfully.')">
                     <div class="form-group">
                         <label for="new-username">New Username:</label>
                         <input type="text" id="new-username" name="new-username" required>
                     </div>
                     <button type="submit">Change Username</button>
                 </form>
+                <div id="username-success-message" style="display: none; color: green;">Username has changed successfully.</div>
             </div>
         </div>
         
@@ -150,7 +78,7 @@
         <div class="section section-with-margin">
             <h3>Change Password</h3>
             <div class="section-content">
-                <form action="change_password.php" method="post">
+                <form action="change_password.php" method="post" onsubmit="return showSuccessMessage('password', 'Password has changed successfully.')">
                     <div class="form-group">
                         <label for="current-password">Current Password:</label>
                         <input type="password" id="current-password" name="current-password" required>
@@ -161,6 +89,7 @@
                     </div>
                     <button type="submit">Change Password</button>
                 </form>
+                <div id="password-success-message" style="display: none; color: green;">Password has changed successfully.</div>
             </div>
         </div>
         
@@ -168,21 +97,22 @@
         <div class="section section-with-margin">
             <h3>Change Payment Method</h3>
             <div class="section-content">
-                <form action="change_payment_method.php" method="post">
+                <form action="change_payment_method.php" method="post" onsubmit="return showSuccessMessage('payment-method', 'Payment method has been changed successfully.')">
                     <div class="form-group">
                         <label for="payment-method">Select Payment Method:</label>
                         <select id="payment-method" name="payment-method" required>
                             <option value="credit-card">Credit Card</option>
-                            <option value="paypal">PayPal</option>
+                            <option value="paypal">Cash</option>
                             <option value="bank-transfer">Bank Transfer</option>
                         </select>
                     </div>
                     <button type="submit">Change Payment Method</button>
                 </form>
+                <div id="payment-method-success-message" style="display: none; color: green;">Payment method has been changed successfully.</div>
             </div>
         </div>
-
         
-        
+    </div>
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </body>
 </html>
