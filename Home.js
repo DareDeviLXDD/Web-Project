@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     closeBtn.addEventListener('click', function() {
         searchBar.style.display = 'none';
     });
-
+    
 
 
     var cartIcon = document.querySelector('.cart-icon');
@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     closeCartBtn.addEventListener('click', function() {
+        console.log("Close button clicked");
         cartPanel.style.display = 'none';
     });
-
-
+    
 
     function validateEmail() {
         var emailInput = document.getElementById('emailInput');
@@ -66,3 +66,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
 });
+
+function initializeQuantity() {
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
+
+    let a = 1;
+
+    plus.addEventListener("click", () => {
+        a++;
+        a = a < 10 ? "0" + a : a; // Format for numbers less than 10
+        num.innerText = a; // Update the displayed quantity
+    });
+
+    minus.addEventListener("click", () => {
+        if (a > 1) {
+            a--;
+            a = a < 10 ? "0" + a : a; // Format for numbers less than 10
+            num.innerText = a; // Update the displayed quantity
+        }
+    });
+}

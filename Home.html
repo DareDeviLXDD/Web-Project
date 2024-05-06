@@ -10,6 +10,7 @@
     <title>HOME</title>
 </head>
 <body>
+    
     <!-- navbar -->
    <div class="header">
     <div class="logo">
@@ -19,13 +20,37 @@
         <a href="#search" class="search-icon"><i class="bi bi-search"></i></a>
         <a href="#settings"><i class="bi bi-gear"></i></a>
     </div>
+   
     <div class="cart-panel" id="cart-panel">
-        <div class="cart-content">
-            <img src="cart.png" alt="Cart Image">
-            <button>Continue Shopping</button> 
-            <button id="close-cart">Close</button>
-        </div>
-    </div>
+         <!-- <div class="cart-content">
+             <img src="cart.png" alt="Cart Image">
+             <button>Continue Shopping</button> 
+             <button id="close-cart">Close</button>
+         </div> -->
+ 
+         <form>
+             <h4>Shopping Cart</h4>
+             <div class="productCard">
+                 <img id="cartitemimg" src="https://static.e-stradivarius.net/5/photos4/2024/V/0/1/p/1380/219/010/1380219010_1_1_1.jpg?t=1706631402878&impolicy=stradivarius-itxmediumhigh&imwidth=1920&imformat=chrome&imdensity=1.25" alt="Product Image" >
+                 <div class="productDetails"> 
+                     <div class="productInfo">
+                         <span class="productName">FORMAL BERMUDA SHORTS WITH FINE STRIPES</span><br>
+                         <span class="productPrice">890 L.E</span>
+                     </div>
+                     <div class="wrapper"> 
+                         <span class="minus">-</span>
+                         <span class="num">01</span>
+                         <span class="plus">+</span>
+                     </div>
+                 </div>
+             </div>
+             <button>Check-Out</button> 
+             <button id="close-cart">Close</button>
+             <script>
+                 document.addEventListener("DOMContentLoaded", initializeQuantity);
+             </script>
+         </form>
+     </div>
     <!-- <div class="search-bar" id="search-bar">
         <input type="text" placeholder="Search...">
         <button>Search</button>
