@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     closeBtn.addEventListener('click', function() {
         searchBar.style.display = 'none';
     });
-    
+
 
 
     var cartIcon = document.querySelector('.cart-icon');
@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     closeCartBtn.addEventListener('click', function() {
-        console.log("Close button clicked");
         cartPanel.style.display = 'none';
     });
-    
+
+
 
     function validateEmail() {
         var emailInput = document.getElementById('emailInput');
@@ -67,6 +67,13 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
+
+
+
+
+
+
+// __________________________yousra________________________________
 function initializeQuantity() {
     const plus = document.querySelector(".plus");
     const minus = document.querySelector(".minus");
