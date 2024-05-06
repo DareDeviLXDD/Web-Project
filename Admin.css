@@ -47,7 +47,7 @@ button{
     height: 30px;
     border: none;
     cursor: pointer;
-    background: #390053;
+    background: #4b0053;
     color: #fff;
     border-radius: 20px;
     transition: 0.5s;/*3ashan al 7arof lama tab3ad*/
@@ -59,6 +59,16 @@ button:hover{
 .btnSearch{
     display: flex;
     justify-content: space-between;
+    padding: 10px;
+}
+.btnpages{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.btnpages button{
+    
+    width: 30%;
 }
 .btnSearch button{
     width: 45%;
