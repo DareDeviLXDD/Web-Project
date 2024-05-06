@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="crud">
+        <div class="head">
+        <h2>Admin</h2>
+        <p>USER MANAGEMENT SYSTEM</P>
+        </div>
+        <div class="inputs">
+            <input placeholder="Name" type="text" id="title">
+            <input placeholder="Role" type="text" id="title">
+            <input type="number" id="price" placeholder="Phone number">
+            <input type="number" id="taxes" placeholder="ID">
+            <input placeholder="E-mail" type="email" id="count">
+            
+            <button id="submit">ADD</button>
+        </div>
+
+        <div class="outputs">
+            <div class="searchBlock">
+                <input type="text" id="search" placeholder="Search">
+                <div class="btnSearch">
+                <button id="searchTitle">Search By Name</button>
+                <button id="searchTCategory">Search By Role</button>
+                </div>
+             </div>
+
+
+             <table>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Phone number</th>
+                    <th>E-mail</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mariam</td>
+                        <td>Admin</td>
+                        <td>01018520255</td>
+                        <td>mariam2206056@miuegypt.edu.eg</td>
+                        <td><button id="update">update</button></td>
+                        <td><button id="delete">delete</button></td>
+                    </tr>
+                    <tr> 
+                        <td>2</td>
+                        <td>Yousra</td>
+                        <td>user</td>
+                        <td>01018520666</td>
+                        <td>yousra2205494@miuegypt.edu.eg</td>
+                        <td><button id="update">update</button></td>
+                        <td><button id="delete">delete</button></td>
+                     </tr>
+                </tbody>
+             </table>
+             <div class="btnSearch">
+                <button id="searchTitle">Home Page</button>
+                <button id="searchTCategory">Product Management Page</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
