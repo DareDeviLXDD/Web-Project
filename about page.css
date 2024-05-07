@@ -1,20 +1,96 @@
+
+*{
+    background-color: #665F5F;
+font-family: sans-serif;
+}
 .about{
-    color:#C8BEBD;
+    color:rgb(3, 3, 3);
+    max-width: 95%;
+    margin-left: 48px;
+    margin-bottom: 60px;
+}
+.W-img{
+    width: 1150px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
 
 }
-*{
-    background-color: #646464;
+.W-img h3{
+
+    color:rgb(177, 199, 218);
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom:20px;
 }
+
+.W-img h5{
+    color:rgb(177, 199, 218);
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom:20px;
+}
+.w-img h4{
+    color:rgb(0, 136, 255);
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+/* .image img{
+ 
+    height:330px;
+ width: 510px;
+
+   
+} */
+.WE{
+    color:rgb(130, 33, 33);
+}
+
 #insta{
     height: 30px;
-    color: aqua ;
-
-
+ 
 }
 #faceb{
 height: 30px;
-color:#0000f0 ;
 }
 #twit{
     height:30px;
 }
+/***********************************Footer*********************/
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #e2e3e5;
+    color: #264653;
+ }
+ 
+ input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+ }
+ button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #264653;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ .footerh2{
+   font-style: bold;
+ }
+/* ****************header********************* */
+.header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+ }
+ 
