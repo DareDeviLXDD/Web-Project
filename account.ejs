@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="/static/Mostafa/acc.css"> <!-- Adjust path to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Account Settings</h1>
+        </header>
+        
+        <!-- Customer Information Section -->
+        <section class="section section-with-margin">
+            <h2>Customer Information</h2>
+            <div class="section-content">
+                <% if (users && users.length > 0) { %>
+                    <% users.forEach(user => { %>
+                        <p>Username: <%= user.username %></p>
+                        <p>Email: <%= user.email %></p>
+                        <p>Phone Number: <%= user.phoneNumber %></p>
+                        <p>Gender: <%= user.gender %></p>
+                        <p>Address: <%= user.address.street %>, <%= user.address.city %></p>
+                    <% }) %>
+                <% } else { %>
+                    <p>No user data available.</p>
+                <% } %>
+            </div>
+        </section>
+        
+        <!-- Order History Section -->
+        <section class="section section-with-margin">
+            <h2>Order History</h2>
+            <div class="section-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (users && users.length > 0 && users[0].orders && users[0].orders.length > 0) { %>
+                            <% users[0].orders.forEach(order => { %>
+                                <tr>
+                                    <td><%= order.orderNumber %></td>
+                                    <td><%= moment(order.date).format('YYYY-MM-DD') %></td>
+                                    <td><%= order.status %></td>
+                                    <td>$<%= order.total %></td>
+                                </tr>
+                            <% }) %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="4">No order data available.</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Change Address Section -->
+        <section class="section section-with-margin">
+            <h2>Change Address</h2>
+            <div class="section-content">
+                <p>To change your address, click the button below:</p>
+                <form action="/change_address">
+                    <button type="submit">Change Address</button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Change Username Section -->
+        <section class="section section-with-margin">
+            <h2>Change Username</h2>
+            <div class="section-content">
+                <form action="/change_username" method="post" onsubmit="return showSuccessMessage('username', 'Username has changed successfully.')">
+                    <div class="form-group">
+                        <label for="new-username">New Username:</label>
+                        <input type="text" id="new-username" name="new-username" required>
+                    </div>
+                    <button type="submit">Change Username</button>
+                </form>
+                <div id="username-success-message" style="display: none; color: green;">Username has changed successfully.</div>
+            </div>
+        </section>
+        
+        <!-- Change Password Section -->
+        <section class="section section-with-margin">
+            <h2>Change Password</h2>
+            <div class="section-content">
+                <form action="/change_password" method="post" onsubmit="return showSuccessMessage('password', 'Password has changed successfully.')">
+                    <div class="form-group">
+                        <label for="current-password">Current Password:</label>
+                        <input type="password" id="current-password" name="current-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password:</label>
+                        <input type="password" id="new-password" name="new-password" required>
+                    </div>
+                    <button type="submit">Change Password</button>
+                </form>
+                <div id="password-success-message" style="display: none; color: green;">Password has changed successfully.</div>
+            </div>
+        </section>
+        
+        <!-- Change Payment Method Section -->
+        <section class="section section-with-margin">
+            <h2>Change Payment Method</h2>
+            <div class="section-content">
+                <form action="/change_payment_method" method="post" onsubmit="return showSuccessMessage('payment-method', 'Payment method has been changed successfully.')">
+                    <div class="form-group">
+                        <label for="payment-method">Select Payment Method:</label>
+                        <select id="payment-method" name="payment-method" required>
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bank-transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <button type="submit">Change Payment Method</button>
+                </form>
+                <div id="payment-method-success-message" style="display: none; color: green;">Payment method has been changed successfully.</div>
+            </div>
+        </section>
+        
+    </div>
+    <script src="/static/Mostafa/script.js"></script> <!-- Adjust path to your JS file -->
+</body>
+</html>
